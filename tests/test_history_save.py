@@ -27,3 +27,4 @@ def test_save_history_failure(mock_logging_error, mock_save_history):
     # Assertions
     mock_save_history.assert_called_once()
     mock_logging_error.assert_called_once_with("Failed to save history due to: Permission denied")
+    

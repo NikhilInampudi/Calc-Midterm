@@ -36,3 +36,4 @@ def test_delete_history_failure(mock_logging, mock_read_csv):
 
     # Ensure error logging is called due to FileNotFoundError
     mock_logging.error.assert_called_with("Failed to delete history records: File not found")
+    

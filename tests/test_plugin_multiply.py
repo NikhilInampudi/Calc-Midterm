@@ -54,3 +54,4 @@ def test_app_multiply_non_numeric(capfd, monkeypatch):
     out, _ = capfd.readouterr()
     expected_output = "Please enter valid numbers."
     assert expected_output in out, "Non-numeric input did not produce the expected error message."
+    

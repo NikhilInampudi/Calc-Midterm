@@ -23,3 +23,4 @@ def test_clear_history(mock_file, mock_logging_info, mock_to_csv):
     assert mock_logging_info.call_count == 2
     mock_logging_info.assert_any_call("History Deleted")
     mock_logging_info.assert_any_call("History Header updated")
+    

@@ -55,3 +55,4 @@ def test_app_subtract_non_numeric(capfd, monkeypatch):
     out, _ = capfd.readouterr()
     expected_error_message = "Please enter valid numbers."
     assert expected_error_message in out, "Non-numeric input did not produce the expected error message."
+    

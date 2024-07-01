@@ -46,3 +46,4 @@ def test_load_history_failure(mock_logging_error, mock_read_csv):
     # Assertions
     mock_read_csv.assert_called_once_with("./data/calculation_history.csv")
     mock_logging_error.assert_called_once_with("Parsing data error")
+    

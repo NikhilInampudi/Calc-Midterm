@@ -22,3 +22,4 @@ def test_menu_command_execute(capfd):
     assert out == expected_output
     # Verify logging.info was called with expected message
     # This might require configuring the logging during the test or using a logging mocking library
+    

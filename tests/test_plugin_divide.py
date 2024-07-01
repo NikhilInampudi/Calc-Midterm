@@ -67,3 +67,4 @@ def test_app_divide_negative_positive(capfd, monkeypatch, dividend, divisor, res
     # Adjust the format here to match the actual output format
     expected_output = f"The result of dividing {float(dividend)} by {float(divisor)} is: {result}\n"
     assert expected_output in out, f"Division with {dividend}/{divisor} did not produce the expected output. Got: {out}"
+    
