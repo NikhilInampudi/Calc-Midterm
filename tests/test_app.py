@@ -1,4 +1,4 @@
-'''Testing for App Class'''
+'''Testing for App Class''''
 import pytest
 from app import App
 
@@ -10,7 +10,7 @@ def test_app_start_exit_command(capfd, monkeypatch):
     with pytest.raises(SystemExit) as e:
         app.start()
     assert e.type == SystemExit
-    
+
 def test_app_start_unknown_command(capfd, monkeypatch):
     # Simulate user entering an unknown command followed by 'exit'
     inputs = iter(['unknown_command', 'exit'])
