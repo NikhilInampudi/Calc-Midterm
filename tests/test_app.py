@@ -1,4 +1,6 @@
 '''Testing for App Class'''
+=======
+'''Testing for App class'''
 import pytest
 from app import App
 
@@ -25,4 +27,3 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     captured = capfd.readouterr()
     assert "No such command: unknown_command" in captured.out
     assert excinfo.type == SystemExit
-    
