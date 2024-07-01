@@ -2,10 +2,12 @@ from app.commands import CommandHandler
 from app.commands.exit import ExitCommand
 from app.commands.goodbye import GoodbyeCommand
 from app.commands.greet import GreetCommand
+from app.commands.menu import MenuCommand
 
 class App:
     def __init__(self): # Constructor
         self.command_handler = CommandHandler()
+
 
     def start(self):
         # Register commands here

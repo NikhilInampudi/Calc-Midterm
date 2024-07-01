@@ -1,4 +1,4 @@
-'''Testing for App Class''''
+'''Testing for App Class'''
 import pytest
 from app import App
 
