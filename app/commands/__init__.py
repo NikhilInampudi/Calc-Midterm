@@ -1,4 +1,4 @@
-'''Commands Package'''
+'''COMMAND PATTERN'''
 from abc import ABC, abstractmethod
 
 class Command(ABC):
