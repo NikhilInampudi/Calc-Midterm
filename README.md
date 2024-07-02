@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+This midterm requires the development of an advanced Python-based calculator application. Designed to underscore the importance of professional software development practices, the application integrates clean, maintainable code, the application of design patterns, comprehensive logging, dynamic configuration via environment variables, sophisticated data handling with Pandas, and a command-line interface (REPL) for real-time user interaction.
+
 ## Project Submission
 
 # Setup
@@ -27,12 +29,12 @@ You can perform basic arithmetic operations such as addition, subtraction, multi
 
 Here are the specific commands for each operation:
 
-**addition**: Performs addition.
-**substract**: Executes subtraction.
-**multiplication**: Handles multiplication.
-**divide**: Performs division.
-**menu**: Displays a list of available commands.
-**exit**: Closes the application.
+- **addition**: Performs addition.
+- **subtract**: Executes subtraction.
+- **multiply**: Handles multiplication.
+- **divide**: Performs division.
+- **menu**: Displays a list of available commands.
+- **exit**: Closes the application.
 
 The menu command dynamically updates to include any new plugins added in the future, ensuring that all available commands are always visible. Feel free to customize placeholders like greet, exit, and goodbye as needed for your application.
 
