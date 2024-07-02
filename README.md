@@ -1,103 +1,137 @@
-## Advanced Python Calculator for Software Engineering Graduate Course
+# Advanced Python Calculator for Software Engineering Graduate Course
 
 ## Project Overview
 
-This midterm requires the development of an advanced Python-based calculator application. Designed to underscore the importance of professional software development practices, the application integrates clean, maintainable code, the application of design patterns, comprehensive logging, dynamic configuration via environment variables, sophisticated data handling with Pandas, and a command-line interface (REPL) for real-time user interaction.
-## Instructor Video - [here](https://youtu.be/hu9YFdeSkV8)
-
 ## Project Submission
 
-- Create a NEW repository from scratch and transfer any relevant work as you complete the assignment, **you need to show a clear history of work through your commits, or your project could be given as low as a 0 for not showing your work.**
-- Submit through a GitHub repository link containing the necessary documentation, configuration examples, and a coherent commit history.
-- You are required to write a short description and link to your implememtation of the design patterns you use.
-- You need to provide a description of how you used environment variables and link to your code to illustrate.
--  You need to explain and link to how you are using logging.
--  You need to link to and explain how you are using try/catch / exceptions to illustrate  "Look Before You Leap" (LBYL) and "Easier to Ask for Forgiveness than Permission" (EAFP)/
-- Create a 3-5 minute video demonstration of using the calculator, highlighting its key features and functionalities. Link the video to the repository readme.
--  Submit a link to your repository to Canvas.  
--  Keep your repository private while working on it, so people don't copy your work.  Make the repository public within a day of the project being due, so we can grade it.
-- **REQUIRED - YOU MUST USE GITHUB ACTIONS AND YOUR CODE MUST PASS ALL THE TESTS ON GITHUB**
+# Setup
 
-## Core Functionalities
+## Setup Instructions
+1. Clone the repo
+2. CD into the project folder
+3. Create a virtual environment
+4. Activate the virtual environment (VE)
+5. Install Requirements
 
-### Command-Line Interface (REPL)
+## Test Commands
+- `pytest` run all tests
+- `pytest --pylint --cov` <- Run Pylint and Coverage (Can be run independently)
 
-Implement a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator. This interface should support:
-- Execution of arithmetic operations (Add, Subtract, Multiply, and Divide)
-- Management of calculation history.
-- Access to extended functionalities through dynamically loaded plugins.
+# Usage
 
-### Plugin System
+## Functionality
 
-Create a flexible plugin system to allow seamless integration of new commands or features. This system should:
-- Dynamically load and integrate plugins without modifying the core application code.
-- Include a REPL  "Menu" command to list all available plugin commands, ensuring user discoverability and interaction.
+### Calculator Operations:
 
-### Calculation History Management with Pandas
+You can perform basic arithmetic operations such as addition, subtraction, multiplication, and division. This functionality is enhanced by a plugin architecture and dynamic loading design, which enables the seamless addition of new features to the plugins folder without the need for hardcoding.
 
-Utilize Pandas to manage a robust calculation history, enabling users to:
-- Load, save, clear, and delete history records through the REPL interface.
+Here are the specific commands for each operation:
 
+**addition**: Performs addition.
+**substract**: Executes subtraction.
+**multiplication**: Handles multiplication.
+**divide**: Performs division.
+**menu**: Displays a list of available commands.
+**exit**: Closes the application.
 
-### Professional Logging Practices
+The menu command dynamically updates to include any new plugins added in the future, ensuring that all available commands are always visible. Feel free to customize placeholders like greet, exit, and goodbye as needed for your application.
 
-Establish a comprehensive logging system to record:
-- Detailed application operations, data manipulations, errors, and informational messages.
-- Differentiate log messages by severity (INFO, WARNING, ERROR) for effective monitoring.
-- Dynamic logging configuration through environment variables for levels and output destinations.
+### History Management:
 
-### Advanced Data Handling with Pandas
+The application utilizes robust data management techniques to handle operations effectively.
 
-Employ Pandas for:
-- Efficient data reading and writing to CSV files.
-- Managing calculation history.
+Commands for managing data include:
 
-### Design Patterns for Scalable Architecture
+**load**: Retrieves the history of performed operations.
+**clear**: Erases the existing history.
+**delete**: Removes specific indexed data entries.
+**save**: Stores the history of operations.
 
-Incorporate key design patterns to address software design challenges, including:
-- **Facade Pattern:** Offer a simplified interface for complex Pandas data manipulations.
-- **Command Pattern:** Structure commands within the REPL for effective calculation and history management.
-- **Factory Method, Singleton, and Strategy Patterns:** Further enhance the application's code structure, flexibility, and scalability.
+All operation history is stored in `./data/calculation_history.csv`. The system seamlessly reads from and writes to this CSV file, ensuring efficient data handling and persistence.
 
-## Development, Testing, and Documentation Requirements
+### Configuration via Environment Variables:
 
-### Testing and Code Quality
+The application stores its configuration details, including development and testing environment variables, in a .env file.
 
-- Achieve a minimum of 90% test coverage with Pytest.
-- Ensure code quality and adherence to PEP 8 standards, verified by Pylint.
+https://github.com/NikhilInampudi/Calc-Midterm/blob/d2a4975e30ad0da0743ef846ebd4982ce7e15db7/app/__init__.py#L30-L37
 
-### Version Control Best Practices
+### REPL Interface:
 
-- Utilize logical commits that clearly group feature development and corresponding tests, evidencing clear development progression.
+This application operates using the Read-Evaluate-Print-Loop (REPL) pattern.
 
-### Comprehensive Documentation
+https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/REPL.png
 
-- Compile detailed documentation in `README.md`, covering setup instructions, usage examples, and an in-depth analysis of architectural decisions, particularly emphasizing the implementation and impact of chosen design patterns and the logging strategy.
+## Design Patterns
 
+### Implementation and Application:
 
-## Evaluation Criteria
+This application incorporates a range of design patterns to optimize its architecture and functionality. Specifically:
 
-### Total Points: 100
+- **Facade Pattern**: Streamlines Pandas data manipulation by providing a unified interface.
+  
+- **Command Pattern**: Forms the foundation of the application's REPL (Read-Evaluate-Print Loop), facilitating modular command execution.
 
-#### Functionality (40 Points)
+- **Factory Method, Singleton, and Strategy Patterns**: Enhance the application's flexibility and scalability. The Factory Method pattern supports dynamic object creation, Singleton ensures singular instance management, and the Strategy Pattern enables adaptable algorithm selection.
 
-- **Calculator Operations:** 20 points for implementing basic and statistical operations.
-- **History Management:** 10 points for effective management using Pandas.
-- **Configuration via Environment Variables:** 5 points for flexible application configuration.
-- **REPL Interface:** 5 points for a user-friendly command-line interface.
+These design patterns collectively bolster the application's structure, fostering maintainability, extensibility, and efficiency across its various components and operations.
 
-#### Design Patterns (20 Points)
+1. **Singleton Pattern**:
+   The `App` class functions as a singleton, ensuring the existence of only one instance throughout the application. This is enforced through a private constructor and a static initialization method (`__init__`), which manages the class instantiation process.
 
-- **Implementation and Application:** 10 points for the effective use of design patterns.
-- **Documentation and Explanation:** 10 points for thorough documentation of design pattern rationale and implementation.
+  https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/app/__init__.py#L11-L18
 
-#### Testing and Code Quality (20 Points)
+2. **Factory Method Pattern**:
+ The `CommandHandler` class acts as a factory for generating command objects (`Command` instances). It offers a `register_command` method to enlist various command types and an `execute_command` method to execute these commands based on their assigned names.
 
-- **Comprehensive Testing with Pytest:** 10 points for extensive test coverage.
-- **Code Quality and Adherence to Standards:** 10 points for clean, maintainable code.
+  https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/app/commands/__init__.py#L9-L20
 
-#### Version Control, Documentation, and Logging (20 Points)
+3. **Command Pattern**:
+ The `Command` abstract base class defines a standardized way to execute commands through its `execute` method. Concrete command classes, such as `AddCommand`, adhere to this interface by encapsulating specific operations. This approach effectively separates the sender (who invokes the commands) from the receiver (objects that carry out the actions), promoting extensibility and adaptability within the application's design.
 
-- **Commit History:** 10 points for logical and informative commit messages.
-- **README Documentation:** 5 points for comprehensive setup and usage instructions.
-- **Logging Practices:** 5 points for implementing adaptable and informative logging.
+   https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/app/plugins/addition/__init__.py#L8-L10
+
+4. **Iterator Pattern**:
+   The `load_plugins` method within the `App` class systematically traverses all modules within the `app.plugins` package using `pkgutil.iter_modules`. This method dynamically loads and initializes plugin classes, exemplifying the iterator pattern. This pattern allows for seamless traversal of a collection (in this case, modules) while maintaining abstraction and preventing direct exposure of underlying details.
+
+   https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/app/__init__.py#L40-L52
+
+5. **Template Method Pattern**: The `Command` class establishes a blueprint with its abstract method `execute()`, which must be implemented by concrete command classes. This structure ensures a standardized approach to executing commands, enabling customization of specific operations while preserving a uniform interface across diverse command implementations.
+
+6. **Strategy Pattern** (implied): Although not defined as an independent class, the `execute()` method within each concrete command class functions as a strategy for executing specific operations. This approach encapsulates varying strategies within command objects, allowing the application to dynamically choose and execute different strategies as needed during runtime.
+
+### Try/Catch/Except
+Implemented exception handling to demonstrate both "Look Before You Leap" (LBYL) and "Easier to Ask for Forgiveness than Permission" (EAFP) approaches.
+
+   https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/app/plugins/multiply/__init__.py#L8-L19
+
+  ## Testing and Code Quality
+
+### Comprehensive Tests Using pytest:
+
+The test cases reside in the `tests` folder and primarily employ unit testing alongside assertions to validate various scenarios. These tests significantly enhance the application's robustness by covering a wide range of possible outcomes.
+
+- `pytest` run all tests
+- `pytest --pylint --cov` <- Run Pylint and Coverage (Can be run independently)
+
+Test Coverage = 96%
+
+https://github.com/NikhilInampudi/Calc-Midterm/blob/60c3b0a8474f7b9cf3cf42c377e0d9bf69a70837/Coverage%20Test.png
+
+## Version Control, Documentation, and Logging
+
+GitHub Actions automates the execution of all tests upon code pushes or merges.
+
+### Commit History:
+
+This repository maintains a clear and informative commit history, ensuring it serves as a valuable reference.
+
+### Logging Practices:
+
+The application implements dynamic logging configuration using environment variables. It features a sophisticated logging system that captures critical steps during operations, including detailed application activities, data manipulations, errors, and informative messages. This logging setup ensures robust error handling and exception management without disrupting application functionality. Overall, logging is extensively utilized throughout the application instead of relying on print statements.
+
+- `logging.info`: Records events and details about the execution flow at specific points in the code.
+- `logging.error`: Captures and logs error messages and exceptions encountered during code execution.
+
+https://github.com/NikhilInampudi/Calc-Midterm/blob/60c3b0a8474f7b9cf3cf42c377e0d9bf69a70837/app/plugins/multiply/__init__.py#L8-L19
+
+https://github.com/NikhilInampudi/Calc-Midterm/blob/4b1fb3d36acc8166d4c6b24ad3af8a0767756201/Logging%20Info%20.png
