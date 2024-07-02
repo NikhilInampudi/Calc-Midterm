@@ -44,10 +44,10 @@ The application utilizes robust data management techniques to handle operations 
 
 Commands for managing data include:
 
-**load**: Retrieves the history of performed operations.
-**clear**: Erases the existing history.
-**delete**: Removes specific indexed data entries.
-**save**: Stores the history of operations.
+- **load**: Retrieves the history of performed operations.
+- **clear**: Erases the existing history.
+- **delete**: Removes specific indexed data entries.
+- **save**: Stores the history of operations.
 
 All operation history is stored in `./data/calculation_history.csv`. The system seamlessly reads from and writes to this CSV file, ensuring efficient data handling and persistence.
 
@@ -55,10 +55,13 @@ All operation history is stored in `./data/calculation_history.csv`. The system 
 
 The application stores its configuration details, including development and testing environment variables, in a .env file.
 
+https://github.com/NikhilInampudi/Calc-Midterm/blob/70db676a76f5b99e72a06fda2f9615fab61f7a9a/app/__init__.py#L30-L37
+
 ### REPL Interface:
 
-This application operates using the Read-Evaluate-Print-Loop (REPL) pattern.
 ![REPL pattern](https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/REPL.png)
+
+This application operates using the Read-Evaluate-Print-Loop (REPL) pattern.
 
 ## Design Patterns
 
@@ -96,7 +99,7 @@ These design patterns collectively bolster the application's structure, fosterin
 
 5. **Template Method Pattern**: The `Command` class establishes a blueprint with its abstract method `execute()`, which must be implemented by concrete command classes. This structure ensures a standardized approach to executing commands, enabling customization of specific operations while preserving a uniform interface across diverse command implementations.
 
-6. **Strategy Pattern** (implied): Although not defined as an independent class, the `execute()` method within each concrete command class functions as a strategy for executing specific operations. This approach encapsulates varying strategies within command objects, allowing the application to dynamically choose and execute different strategies as needed during runtime.
+6. **Strategy Pattern**: Although not defined as an independent class, the `execute()` method within each concrete command class functions as a strategy for executing specific operations. This approach encapsulates varying strategies within command objects, allowing the application to dynamically choose and execute different strategies as needed during runtime.
 
 ### Try/Catch/Except
 Implemented exception handling to demonstrate both "Look Before You Leap" (LBYL) and "Easier to Ask for Forgiveness than Permission" (EAFP) approaches.
