@@ -53,13 +53,10 @@ All operation history is stored in `./data/calculation_history.csv`. The system 
 
 The application stores its configuration details, including development and testing environment variables, in a .env file.
 
-https://github.com/NikhilInampudi/Calc-Midterm/blob/d2a4975e30ad0da0743ef846ebd4982ce7e15db7/app/__init__.py#L30-L37
-
 ### REPL Interface:
 
 This application operates using the Read-Evaluate-Print-Loop (REPL) pattern.
-
-https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/REPL.png
+![REPL pattern](https://github.com/NikhilInampudi/Calc-Midterm/blob/506fba3f08b2811f7a0bbd580a7ffe70b5924130/REPL.png)
 
 ## Design Patterns
 
@@ -114,8 +111,8 @@ The test cases reside in the `tests` folder and primarily employ unit testing al
 - `pytest --pylint --cov` <- Run Pylint and Coverage (Can be run independently)
 
 Test Coverage = 96%
+![Test Coverage](https://github.com/NikhilInampudi/Calc-Midterm/blob/60c3b0a8474f7b9cf3cf42c377e0d9bf69a70837/Coverage%20Test.png)
 
-https://github.com/NikhilInampudi/Calc-Midterm/blob/60c3b0a8474f7b9cf3cf42c377e0d9bf69a70837/Coverage%20Test.png
 
 ## Version Control, Documentation, and Logging
 
@@ -134,4 +131,5 @@ The application implements dynamic logging configuration using environment varia
 
 https://github.com/NikhilInampudi/Calc-Midterm/blob/60c3b0a8474f7b9cf3cf42c377e0d9bf69a70837/app/plugins/multiply/__init__.py#L8-L19
 
-https://github.com/NikhilInampudi/Calc-Midterm/blob/4b1fb3d36acc8166d4c6b24ad3af8a0767756201/Logging%20Info%20.png
+![Logging](https://github.com/NikhilInampudi/Calc-Midterm/blob/4b1fb3d36acc8166d4c6b24ad3af8a0767756201/Logging%20Info%20.png)
+
